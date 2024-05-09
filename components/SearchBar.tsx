@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Pokemon, Names } from '../components/type';
+import { Pokemon, Name } from '../components/type';
 import PokedexTable from '../components/PokedexTable';
 import PokemonRow from './PokemonRow';
 
 interface SearchBarProps {
     allPokemon: Pokemon[];
-    Names: Names[];
+    Name: Name[];
 
 
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ }) => {
     const [searchValue, setSearchValue] = useState<string>('');
-    const [searchTerm, setSearchTerm] = useState<Names[]>([]);
+    const [searchTerm, setSearchTerm] = useState<Name[]>([]);
     const [searchResults, setSearchResults] = useState<string[]>([]);
     const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
     const [newPokemon, setNewPokemon] = useState<Pokemon[]>([]);
@@ -103,13 +103,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
 
 
             <form onSubmit={handleSearch} className='flex flex-col gap-7 w-1/2 max-md:w-full relative'>
-            <h1 className='text-xl font-bold'>Enter and select your desired pokemons.</h1>
+                <h1 className='text-xl font-bold'>Enter and select your desired pokemons.</h1>
                 <div className="container border-2 p-4 border-gray-400 bg-white  flex items-center rounded-lg  gap-2">
                     {searchTerm.map((i) => {
                         return (
                             <div className='bg-gray-300 flex items-center justify-center rounded-md py-2 px-3'>
                                 <p>{i}</p>
-                                <img src="/cross.png" alt="" className='w-5 cursor-pointer ' onClick={()=>{removeTerm(i)}}  />
+                                <img src="/cross.png" alt="" className='w-5 cursor-pointer ' onClick={() => { removeTerm(i) }} />
                             </div>
                         )
 
