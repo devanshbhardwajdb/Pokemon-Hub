@@ -5,7 +5,7 @@ import PokemonRow from './PokemonRow';
 
 interface SearchBarProps {
     allPokemon: Pokemon[];
-    // Name: Names[];
+    
     Result: Result[];
 
 

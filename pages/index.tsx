@@ -52,8 +52,8 @@ const Main: React.FC = () => {
       <button onClick={() => setIsSearchingbyName(!isSearchingbyName)} className='bg_button1 p-5 rounded-lg cursor-pointer hover:scale-105 hover:shadow-lg max-md:scale-90 hover:shadow-black/60 font-medium duration-200'>Search Pokémon by {isSearchingbyName ? 'Type' : 'Name'}</button>
 
       {isSearchingbyName ?
-        <SearchBar /> :
-        <PokemonTypeSelection />
+        <SearchBar allPokemon={[]} Result={[]} /> :
+        <PokemonTypeSelection selectedType={undefined} selectType={() => { }} />
       }
 
     </div>
