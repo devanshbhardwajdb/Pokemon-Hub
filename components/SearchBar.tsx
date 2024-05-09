@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Pokemon, Name } from '../components/type';
+import { Pokemon, Result  } from '../components/type';
 import PokedexTable from '../components/PokedexTable';
 import PokemonRow from './PokemonRow';
 
 interface SearchBarProps {
     allPokemon: Pokemon[];
-    Name: Name[];
+    // Name: Names[];
+    Result: Result[];
 
 
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ }) => {
     const [searchValue, setSearchValue] = useState<string>('');
-    const [searchTerm, setSearchTerm] = useState<Name[]>([]);
-    const [searchResults, setSearchResults] = useState<string[]>([]);
+    const [searchTerm, setSearchTerm] = useState<String[]>([]);
+    const [searchResults, setSearchResults] = useState<Result[]>([]);
     const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
     const [newPokemon, setNewPokemon] = useState<Pokemon[]>([]);
     const [isSearching, setIsSearching] = useState<Boolean>(true);
@@ -42,7 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
     }, [])
 
 
-    const selectTerm = (name: Name) => {
+    const selectTerm = (name: String) => {
         if (!searchTerm.includes(name)) {
             setSearchTerm([...searchTerm, name]);
             setIsSearching(false);
@@ -51,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
     };
     
 
-    const removeTerm = (name: Name) => {
+    const removeTerm = (name: String) => {
         setSearchTerm(searchTerm.filter(term => term !== name));
     };
 
@@ -72,7 +73,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
             newPokemon.push(pokemon.data);
         }
         setAllPokemon(newPokemon);
-        console.log(allPokemon)
+        // console.log(allPokemon)
         setNewPokemon([]);
         setSearchValue('')
         setSearchTerm([]);
@@ -93,7 +94,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
         try {
             const result = await fetch(`/api/searchnames?name=${value}`);
             const { data } = await result.json();
+            // console.log(data)
             setSearchResults(data);
+            // console.log(searchResults,"ye hu m")
         } catch (error) {
             console.error('Error searching Pokémon:', error);
         }

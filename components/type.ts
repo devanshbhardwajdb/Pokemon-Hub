@@ -7,7 +7,8 @@ export interface Pokemon {
   sprite: string;
 }
 
-export interface Name{
+export interface Result{
+  _id: String;
   name: String;
 }
 
