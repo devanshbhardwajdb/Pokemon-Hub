@@ -42,15 +42,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
     }, [])
 
 
-    const selectTerm = (name: string) => {
+    const selectTerm = (name: Name) => {
         if (!searchTerm.includes(name)) {
             setSearchTerm([...searchTerm, name]);
             setIsSearching(false);
             setSearchValue('');
         }
     };
+    
 
-    const removeTerm = (name: string) => {
+    const removeTerm = (name: Name) => {
         setSearchTerm(searchTerm.filter(term => term !== name));
     };
 
