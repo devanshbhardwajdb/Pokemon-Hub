@@ -85,7 +85,7 @@ const PokemonTypeSelection: React.FC<PokemonTypeSelectionProps> = ({
         
         <button
           type='submit'
-          className={`rounded-lg px-4 py-2 bg_button  `}
+          className={`rounded-lg px-4 py-2 bg_button hover:scale-95 duration-200 hover:shadow-lg hover:shadow-black/40 `}
         >
           Search by Type
         </button>

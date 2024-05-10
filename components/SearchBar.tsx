@@ -108,7 +108,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
 
             <form onSubmit={handleSearch} className='flex flex-col gap-7 w-1/2 max-md:w-full relative'>
                 <h1 className='text-xl font-bold'>Enter and select your desired pokemons.</h1>
-                <div className="container border-2 p-4 border-gray-400 bg-white  flex items-center rounded-lg  gap-2">
+                <div className="container border-2 p-4 border-gray-400 bg-white  flex items-center flex-wrap rounded-lg  gap-2">
                     {searchTerm.map((i) => {
                         return (
                             <div className='bg-gray-300 flex items-center justify-center rounded-md py-2 px-3'>
@@ -130,7 +130,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
                 </div>
                 <button
                     type='submit'
-                    className={` rounded-lg px-4 py-2 bg_button `}
+                    className={` rounded-lg px-4 py-2 bg_button hover:scale-95 duration-200 hover:shadow-lg hover:shadow-black/40`}
                 >
                     Search by Name
                 </button>
