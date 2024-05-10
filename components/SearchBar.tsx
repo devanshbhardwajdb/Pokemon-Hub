@@ -108,10 +108,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
 
             <form onSubmit={handleSearch} className='flex flex-col gap-7 w-1/2 max-md:w-full relative'>
                 <h1 className='text-xl font-bold'>Enter and select your desired pokemons.</h1>
-                <div className=" border-2 p-4 border-gray-800 bg-white/50   flex items-center flex-wrap rounded-lg  gap-2">
+                <div className=" border-2 p-4 border-gray-800 bg-gray-100   flex items-center flex-wrap rounded-lg  gap-2">
                     {searchTerm.map((i) => {
                         return (
-                            <div className='bg-gray-300 flex items-center justify-center rounded-md py-2 px-3'>
+                            <div className='bg-gray-300  flex items-center justify-center rounded-md py-2 px-3'>
                                 <p>{i}</p>
                                 <img src="/cross.png" alt="" className='w-5 cursor-pointer ' onClick={() => { removeTerm(i) }} />
                             </div>
@@ -134,7 +134,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ }) => {
                 >
                     Search by Name
                 </button>
-                {isSearching && <div className='absolute top-[70%] bg_button rounded-md'>
+                {isSearching && <div className='absolute dropdown top-[70%] bg_button h-40 z-[50] overflow-y-auto rounded-md'>
                     {searchResults.map((result, index) => (
                         <div key={index} className='px-4  py-2 border-b   border-gray-400 cursor-pointer hover:bg-white/30 hover:rounded-lg' onClick={() => { selectTerm(result.name) }}>
                             {result.name}

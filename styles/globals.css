@@ -23,6 +23,18 @@ body::-webkit-scrollbar-thumb {
   background-image: linear-gradient(to bottom left, #FF5BB3, #f8b303);
   border-radius: 500px;
 }
+.dropdown::-webkit-scrollbar,.cardcontainer::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+  border-radius: 1000px;
+  background: linear-gradient(to bottom left, #FF5BB3, #f8b303);
+}
+
+
+.dropdown::-webkit-scrollbar-thumb,.cardcontainer::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 500px;
+}
 
 .bg_button {
   background-image: linear-gradient(to bottom left, #FF5BB3, #f8b303);
